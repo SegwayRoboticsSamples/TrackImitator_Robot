@@ -20,6 +20,7 @@ import com.segway.robot.algo.minicontroller.CheckPoint;
 import com.segway.robot.algo.minicontroller.CheckPointStateListener;
 import com.segway.robot.algo.minicontroller.ObstacleStateChangedListener;
 import com.segway.robot.sdk.base.bind.ServiceBinder;
+import com.segway.robot.sdk.base.log.Logger;
 import com.segway.robot.sdk.baseconnectivity.Message;
 import com.segway.robot.sdk.baseconnectivity.MessageConnection;
 import com.segway.robot.sdk.baseconnectivity.MessageRouter;
@@ -243,13 +244,14 @@ public class MainActivity extends Activity {
         mMusicPlayer.initialize(this);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
 
+    @Override
+    protected void onPause() {
+        super.onPause();
         // Unbind base service and connection service
         mBase.unbindService();
         mRobotMessageRouter.unbindService();
+        finish();
     }
 
     private void initView() {
@@ -287,7 +289,7 @@ public class MainActivity extends Activity {
     }
 
     private String getDeviceIp() {
-        WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         if (!wifiManager.isWifiEnabled()) {
             wifiManager.setWifiEnabled(true);
         }
@@ -335,7 +337,7 @@ public class MainActivity extends Activity {
         Pose2D pos = mBase.getOdometryPose(-1);
         mBase.setOriginalPoint(pos);
         mBase.setUltrasonicObstacleAvoidanceEnabled(true);
-        mBase.setUltrasonicObstacleAvoidanceDistance(1.0f);
+        mBase.setUltrasonicObstacleAvoidanceDistance(0.5f);
         mBase.setObstacleStateChangeListener(new ObstacleStateChangedListener() {
             @Override
             public void onObstacleStateChanged(int ObstacleAppearance) {
