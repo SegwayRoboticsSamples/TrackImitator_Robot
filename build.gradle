@@ -50,8 +50,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.segway.robot:robot-connectivity-sdk:0.5.88'
-    compile 'com.segway.robot:basesdk:0.6.202'
+    compile 'com.segway.robot:robot-connectivity-sdk:0.5.91'
+    compile 'com.segway.robot:basesdk:0.6.293'
     compile 'com.segway.robot:emoji:0.1.18'
     testCompile 'junit:junit:4.12'
 }
