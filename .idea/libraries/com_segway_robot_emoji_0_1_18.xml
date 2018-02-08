@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.segway.robot:emoji-0.1.18">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.segway.robot/emoji/0.1.18/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/build/intermediates/exploded-aar/com.segway.robot/emoji/0.1.18/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.segway.robot/emoji/0.1.18/dce4a8ab3a5789d2897927a44e3484d9adb354f0/emoji-0.1.18-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
